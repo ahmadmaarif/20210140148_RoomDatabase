@@ -2,26 +2,23 @@ package com.example.roomsiswa.repositori
 
 import com.example.roomsiswa.Data.Siswa
 import com.example.roomsiswa.Data.SiswaDao
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
 
-class OfflineRepositoriSiswa(private val siswaDao: SiswaDao):RepositoriSiswa {
+
+class OfflineRepositoriSiswa(private val siswaDao: SiswaDao):RepositoriSiswa{
     override fun getAllSiswaStream(): Flow<List<Siswa>> {
         return siswaDao.getAllSiswa()
     }
 
-    override fun getSiswaStream(id: Int): Flow<Siswa?> {
-        return siswaDao.getSiswa(id)
-    }
+    override fun getSiswaStream(id: Int): Flow<Siswa?> = siswaDao.getSiswa(id)
 
     override suspend fun insertSiswa(siswa: Siswa) {
-        return siswaDao.insert(siswa)
+        siswaDao.insertSiswa(siswa)
     }
 
-    override suspend fun deleteSiswa(siswa: Siswa) {
-        return siswaDao.delete(siswa)
-    }
+    override suspend fun deleteSiswa(siswa: Siswa) = siswaDao.deleteSiswa(siswa)
 
-    override suspend fun updateSiswa(siswa: Siswa) {
-        return siswaDao.update(siswa)
-    }
+    override suspend fun updateSiswa(siswa: Siswa) = siswaDao.updateSiswa(siswa)
+
+
 }

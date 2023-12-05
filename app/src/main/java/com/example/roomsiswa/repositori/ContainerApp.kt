@@ -6,6 +6,6 @@ interface ContainerApp {
     val repositoriSiswa:RepositoriSiswa
 }
 
-4rclass ContainerDataApp(private val context: Context):ContainerApp{
+class ContainerDataApp(private val context: Context):ContainerApp{
     
 }

@@ -13,6 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
+import com.example.roomsiswa.Halaman.DestinasiEntry
+import com.example.roomsiswa.Halaman.DestinasiHome
+import com.example.roomsiswa.Halaman.EntrySiswaScreen
+import com.example.roomsiswa.Halaman.HomeScreen
 import com.example.roomsiswa.R
 
 @Composable
@@ -63,8 +67,4 @@ fun HostNavigasi(
             EntrySiswaScreen(navigateBack = { navController.popBackStack() })
         }
     }
-}
-
-fun composable(route: Any, function: () -> Unit) {
-
 }
